@@ -1,0 +1,336 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: #111318;
+  color: #f2f2f2;
+}
+
+.landing {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #eef2ff 0%, #f7f9fc 45%, #eef4ff 100%);
+  padding: 24px;
+}
+
+.landing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 36px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(30, 41, 90, 0.12), 0 2px 8px rgba(30, 41, 90, 0.06);
+  border: 1px solid #eef0f5;
+  color: #1c2233;
+}
+
+.landing-icon {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.landing-form h1 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+.landing-subtitle {
+  margin: 0 0 20px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.field-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+
+.landing-form input {
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #dfe3ea;
+  background: #f9fafc;
+  color: #111827;
+  font-size: 1rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.landing-form input::placeholder {
+  color: #9aa1af;
+}
+
+.landing-form input:focus {
+  outline: none;
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.15);
+  background: #ffffff;
+}
+
+.landing-form button {
+  margin-top: 22px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #4f7cff, #3f63e0);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 20px rgba(79, 124, 255, 0.35);
+}
+
+.landing-form button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(79, 124, 255, 0.42);
+}
+
+.landing-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+}
+
+.error-text {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+.interview-stage {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.interview-video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  background: black;
+}
+
+.end-interview-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #e6435a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.recording-timer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(15, 17, 23, 0.65);
+  backdrop-filter: blur(4px);
+  color: #f2f2f2;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+.recording-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff4d4f;
+  animation: recording-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes recording-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.ai-sticker {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.connecting-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(10, 10, 14, 0.85);
+  z-index: 5;
+  text-align: center;
+  padding: 24px;
+}
+
+.ended-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(160deg, #eef2ff 0%, #f7f9fc 45%, #eef4ff 100%);
+  padding: 48px 24px;
+}
+
+.ended-card {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(30, 41, 90, 0.12), 0 2px 8px rgba(30, 41, 90, 0.06);
+  border: 1px solid #eef0f5;
+  color: #1c2233;
+  padding: 32px 36px 40px;
+}
+
+.ended-card-narrow {
+  max-width: 480px;
+}
+
+.back-home-button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #dfe3ea;
+  background: #f9fafc;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.back-home-button:hover {
+  background: #eef2ff;
+  border-color: #4f7cff;
+  color: #3f63e0;
+}
+
+.ended-header {
+  text-align: center;
+  margin: 8px 0 8px;
+}
+
+.ended-header h1 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+.ended-header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.session-id {
+  font-family: monospace;
+  color: #4f7cff;
+}
+
+.recordings {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recordings-player {
+  width: 100%;
+  max-height: 60vh;
+  border-radius: 12px;
+  background: black;
+}
+
+.recordings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.recording-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #f9fafc;
+  border: 1px solid #e3e7ee;
+  border-radius: 10px;
+  padding: 10px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.recording-card.active {
+  border-color: #4f7cff;
+  background: #eef2ff;
+}
+
+.recording-card-play {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #1c2233;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.recording-card-title {
+  font-weight: 600;
+}
+
+.recording-card-duration {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.recording-card-download {
+  color: #4f7cff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.recording-card-download:hover {
+  text-decoration: underline;
+}

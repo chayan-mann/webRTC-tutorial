@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+aiortc
+sqlalchemy>=2.0
+alembic
+psycopg2-binary
+pydantic-settings
+pydantic[email]
+python-dotenv
